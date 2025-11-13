@@ -1,41 +1,65 @@
-This README file contains information on the contents of the meta-middleware layer.
+meta-middleware - CMake Hello World Layer
+==========================================
 
-Please see the corresponding sections below for details.
+This layer provides a simple CMake-based Hello World application example
+for the Yocto Project.
 
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+This layer depends on:
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: git://git.yoctoproject.org/poky
+  layers: meta
+  branch: master
 
-  .
-  .
-  .
+Contents
+========
 
-Patches
-=======
+This layer contains:
+  - recipes-example/hello-world: A simple CMake-based Hello World application
 
-Please submit any patches against the meta-middleware layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
-=================
-
-  I. Adding the meta-middleware layer to your build
- II. Misc
+The hello-world recipe demonstrates:
+  - How to create a CMake-based application in Yocto
+  - Using the cmake class for building
+  - Proper file installation to target image
 
 
-I. Adding the meta-middleware layer to your build
-=================================================
+Adding the meta-middleware layer to your build
+===============================================
 
 Run 'bitbake-layers add-layer meta-middleware'
 
-II. Misc
-========
+Or manually add the layer to your bblayers.conf:
 
---- replace with specific information about the meta-middleware layer ---
+  BBLAYERS ?= " \
+    /path/to/poky/meta \
+    /path/to/poky/meta-poky \
+    /path/to/poky/meta-yocto-bsp \
+    /path/to/poky/meta-middleware \
+    "
+
+Building the Hello World Application
+=====================================
+
+To build the hello-world application:
+
+  bitbake hello-world
+
+To add it to your image, add to your local.conf or image recipe:
+
+  IMAGE_INSTALL:append = " hello-world"
+
+Then build your image:
+
+  bitbake core-image-minimal
+
+Testing
+=======
+
+After building and deploying the image, you can run:
+
+  hello-world
+
+Expected output:
+  Hello, World from meta-middleware!
