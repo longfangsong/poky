@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# /etc/init.d/resolvconf-update
+
+case "$1" in
+    start)
+        logger "Running resolvconf update..."
+        /sbin/resolvconf -u
+        ;;
+    stop|restart|status)
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+        exit 1
+esac
+
+exit 0
