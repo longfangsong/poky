@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(hello-world CXX)
+project(communicate CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -12,10 +12,10 @@ find_package(CURL REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
 # Create executable
-add_executable(hello-world hello.cpp)
+add_executable(communicate hello.cpp)
 
 # Link libcurl
-target_link_libraries(hello-world PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
+target_link_libraries(communicate PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
 
 # Install target
-install(TARGETS hello-world DESTINATION bin)
+install(TARGETS communicate DESTINATION bin)

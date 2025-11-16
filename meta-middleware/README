@@ -17,9 +17,9 @@ Contents
 ========
 
 This layer contains:
-  - recipes-example/hello-world: A simple CMake-based Hello World application
+  - recipes-communicate/communicate: A simple CMake-based Hello World application
 
-The hello-world recipe demonstrates:
+The communicate recipe demonstrates:
   - How to create a CMake-based application in Yocto
   - Using the cmake class for building
   - Proper file installation to target image
@@ -42,13 +42,13 @@ Or manually add the layer to your bblayers.conf:
 Building the Hello World Application
 =====================================
 
-To build the hello-world application:
+To build the communicate application:
 
-  bitbake hello-world
+  bitbake communicate
 
 To add it to your image, add to your local.conf or image recipe:
 
-  IMAGE_INSTALL:append = " hello-world"
+  IMAGE_INSTALL:append = " communicate"
 
 Then build your image:
 
@@ -58,8 +58,7 @@ Testing
 =======
 
 After building and deploying the image, you can run:
-
-  hello-world
+  communicate
 
 Expected output:
   Hello, World from meta-middleware!
