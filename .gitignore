@@ -13,6 +13,7 @@ meta-*/
 buildtools/
 !meta-skeleton
 !meta-selftest
+!meta-mock-sensor
 hob-image-*.bb
 *.swp
 *.orig
