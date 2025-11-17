@@ -1,7 +1,7 @@
 SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://mocksensor.c;beginline=1;endline=131;md5=e3a4452b9315a870d13b82f3f8476357"
+LIC_FILES_CHKSUM = "file://mocksensor.c;beginline=1;endline=131;md5=53d8b4e639f9d5a4b123f0fd0592cb3f"
 
 SRC_URI = "file://mocksensor.c \
            file://Makefile \

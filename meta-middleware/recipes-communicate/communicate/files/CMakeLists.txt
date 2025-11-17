@@ -12,7 +12,7 @@ find_package(CURL REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
 # Create executable
-add_executable(communicate hello.cpp)
+add_executable(communicate communicate.cpp)
 
 # Link libcurl
 target_link_libraries(communicate PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
